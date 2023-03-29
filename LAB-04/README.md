@@ -2,6 +2,9 @@
 
 # LAB-04 --- Implement Virtual Networking
 
+</p>
+<img src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" min-width="300px" max-width="300px" width="300px" align="right" alt="Computador illustration">
+
 Criar Resouce Group
 - Resource Gorup az104-04-rg1
 
