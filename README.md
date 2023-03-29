@@ -24,7 +24,3 @@ LABS que precisa ser efetuados antes de seguir com os preparativos com o Terrafo
 - Commandos: terraform --version e git --version
 - Por Padrao o Terraform e o GIT ja está instalado
 
-2° Iniciando Primeiro Desafio
-
-LAB-04 --- Implement Virtual Networking
-
