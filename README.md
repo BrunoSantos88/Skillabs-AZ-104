@@ -19,7 +19,7 @@ LABS que precisa ser efetuados antes de seguir com os preparativos com o Terrafo
 - https://portal.azure.com/#home
 - Login: LabUser-29864563@#######################.com Senha: #####
 
-* Criar ClousShell com O BASH 
+* Criar ClousShell com o BASH 
 - verificar Terraform e git se estao pré instalados
 - Commandos: terraform --version e git --version
 - Por Padrao o Terraform e o GIT ja está instalado
