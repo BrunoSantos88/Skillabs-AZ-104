@@ -5,7 +5,7 @@ Para Iniciar os LABS pre requisito esta familiarizado com cloudShell --- Necessa
 
 1° -Verificar se o GIT e Terraform ja estão pré instalados.
 
-LABS que precisa ser efetuados antes de seguir com o Terraform para Inicializaçao rapida.
+LABS que precisa ser efetuados antes de seguir com os preparativos com o Terraform para Inicializaçao rapida.
 
 - Azure Active Directory Identities 
 - Subscriptions and RBAC / Manage Governance via Azure Policy 
@@ -13,3 +13,11 @@ LABS que precisa ser efetuados antes de seguir com o Terraform para Inicializaç
 - Azure resources by Using ARM Templates
 - Azure resources by Using Azure PowerShell 
 - Azure resources by Using Azure CLI
+
+
+* Inicio dos LAB sempre acessar o portal
+- https://portal.azure.com/#home
+- Login: LabUser-29864563@#######################.com Senha: #####
+
+* Criar ClousShell com O BASH 
+- verificar Terraform e git se estao pré instalados
