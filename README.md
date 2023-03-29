@@ -21,3 +21,4 @@ LABS que precisa ser efetuados antes de seguir com os preparativos com o Terrafo
 
 * Criar ClousShell com O BASH 
 - verificar Terraform e git se estao pré instalados
+- Commandos: terraform --version e git --version
