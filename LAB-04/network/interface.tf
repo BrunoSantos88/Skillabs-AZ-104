@@ -1,6 +1,6 @@
 #VNET-00
 resource "azurerm_network_interface" "vnet-0" {
-  name                = "venet0-nic"
+  name                = "vnet0-nic"
   location            = var.resource_group_name_location
   resource_group_name = var.resource_group_az104-06-rg1
 
