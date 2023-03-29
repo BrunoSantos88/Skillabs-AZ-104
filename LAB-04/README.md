@@ -21,3 +21,6 @@ Criar VM
 
 Criar NSG
 - az-104-04-nsg01
+
+Criar DNS
+- contoso.org
