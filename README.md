@@ -15,7 +15,7 @@ LABS que precisa ser efetuados antes de seguir com os preparativos com o Terrafo
 - Azure resources by Using Azure CLI
 
 
-* Inicio dos LAB sempre acessar o portal
+* Inicio dos LAB sempre no portal azure login
 - https://portal.azure.com/#home
 - Login: LabUser-29864563@#######################.com Senha: #####
 
