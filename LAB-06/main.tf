@@ -1,0 +1,3 @@
+module "ResouceGroup" {
+    source = "./resourcegroup"   
+}
