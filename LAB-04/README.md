@@ -1,7 +1,7 @@
 Iniciando Primeiro Desafio
 
 # LAB-04 --- Implement Virtual Networking
-----------------------------------------------------------------------------------
+______________________________________________________
 
 Criar Resouce Group
 - Resource Gorup az104-04-rg1
