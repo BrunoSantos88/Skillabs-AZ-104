@@ -1,5 +1,3 @@
-# Iniciando Primeiro Desafio
-
 # LAB-04 --- Implement Virtual Networking
 
 </p>
