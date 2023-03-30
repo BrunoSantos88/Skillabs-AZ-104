@@ -16,3 +16,8 @@ CRIAR VNET
 - subnet0        10.62.0.0/24
 - az104-04-rg3   10.63.0.0/22
 - Subnet0        10.63.0.0/24
+
+Criar VMS
+
+
+
