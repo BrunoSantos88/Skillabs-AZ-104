@@ -7,6 +7,16 @@ resource "azurerm_resource_group" "az104-06" {
   location = "East US"
 }
 
+resource "azurerm_resource_group" "az104-rs04" {
+  name     = "az104-06-rg4"
+  location = "East US"
+}
+
+resource "azurerm_resource_group" "az104-rs5" {
+  name     = "az104-06-rg5"
+  location = "East US"
+}
+
 resource "azurerm_virtual_network" "vnet1" {
   name                = "az104-06-vnet01"
   address_space       = ["10.60.0.0/22"]
