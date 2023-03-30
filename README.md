@@ -24,3 +24,8 @@ LABS que precisa ser efetuados antes de seguir com os preparativos com o Terrafo
 - Commandos: terraform --version e git --version
 - Por Padrao o Terraform e o GIT ja está instalado
 
+
+Criar cloud shell -- Modo advance - Criar recurso por recurso.
+- Resource group Terraformlab106-06
+- Conta de armazenento terraformlab10606
+- Tabela terraformlab10606
