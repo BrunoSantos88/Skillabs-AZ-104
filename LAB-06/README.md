@@ -5,5 +5,7 @@
 
 Criar Resouce Group
 - Resource Gorup az104-04-rg1
+- Resource Gorup az104-04-rg4
+- Resource Gorup az104-04-rg5
 
 
