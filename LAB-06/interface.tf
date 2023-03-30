@@ -1,44 +1,47 @@
-#VNET-00
-resource "azurerm_network_interface" "vnet-0" {
-  name                = "venet0-nic"
+resource "azurerm_network_interface" "vm00" {
+  name                = "vm0-nic"
   location            = var.resource_group_name_location
   resource_group_name = var.resource_group_name_az104-06-rg1
 
-
   ip_configuration {
-    name                          = "vnet0"
+    name                          = "vm00"
     subnet_id                     = azurerm_subnet.subnet0.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.vnet-0.id
-
   }
 }
 
-resource "azurerm_public_ip" "vnet-0" {
-  name                = "vnet-ip-00"
-  resource_group_name = var.resource_group_name_az104-06-rg4
-  location            = var.resource_group_name_location
-  allocation_method   = "Dynamic"
-}
-
-
-#Vnet-01
-resource "azurerm_network_interface" "vnet-1" {
-  name                = "vnet01-nic"
+resource "azurerm_network_interface" "vm01" {
+  name                = "vm1-nic"
   location            = var.resource_group_name_location
   resource_group_name = var.resource_group_name_az104-06-rg1
 
   ip_configuration {
-    name                          = "vnet-ip-01"
+    name                          = "vm01"
     subnet_id                     = azurerm_subnet.subnet1.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.vnet-01_ip.id
   }
 }
 
-resource "azurerm_public_ip" "vnet-01_ip" {
-  name                = "vm_vnet-01_ip"
-  resource_group_name = var.resource_group_name_az104-06-rg1
+resource "azurerm_network_interface" "vm02" {
+  name                = "vm2-nic"
   location            = var.resource_group_name_location
-  allocation_method   = "Dynamic"
+  resource_group_name = var.resource_group_name_az104-06-rg1
+
+  ip_configuration {
+    name                          = "vm02"
+    subnet_id                     = azurerm_subnet.subnet-vnet02.id
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
+resource "azurerm_network_interface" "vm03" {
+  name                = "vm3-nic"
+  location            = var.resource_group_name_location
+  resource_group_name = var.resource_group_name_az104-06-rg1
+
+  ip_configuration {
+    name                          = "vm03"
+    subnet_id                     = azurerm_subnet.subnet-vnet03.id
+    private_ip_address_allocation = "Dynamic"
+  }
 }
