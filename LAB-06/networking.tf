@@ -32,7 +32,7 @@ resource "azurerm_virtual_network" "az104-06-vnet02" {
 
 resource "azurerm_subnet" "subnet-vnet02" {
   name                 = "subnet-vnet02"
-  resource_group_name  = var.resource_group_name_az104-06-rg1
+  resource_group_name  = "az104-06-rg1"
   virtual_network_name = azurerm_virtual_network.az104-06-venet01.id
   address_prefixes     = ["10.62.0.0/24"]
 }
