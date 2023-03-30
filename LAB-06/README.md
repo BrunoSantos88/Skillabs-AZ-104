@@ -8,3 +8,11 @@ Criar Resouce Group
 - Resource Gorup az104-04-rg4
 - Resource Gorup az104-04-rg5
 
+CRIAR VNET
+-az104-04-rg1   CDR
+  ---Subnet-00  CDR
+  ---Subnet-01  CDR
+-az104-04-rg2   CDR
+ ---subnet0     CDR
+-az104-04-rg3   CDR
+  --Subnet0     CDR
