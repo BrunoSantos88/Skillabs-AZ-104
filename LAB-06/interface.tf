@@ -1,7 +1,7 @@
 resource "azurerm_network_interface" "vm00" {
   name                = "vm0-nic"
   location            = var.resource_group_name_location
-  resource_group_name = var.resource_group_name_az104-06-rg1
+  resource_group_name = "az104-06-rg1"
   enable_ip_forwarding = true
 
     ip_configuration {
@@ -19,7 +19,7 @@ resource "azurerm_network_interface" "vm00" {
 resource "azurerm_network_interface" "vm01" {
   name                = "vm1-nic"
   location            = var.resource_group_name_location
-  resource_group_name = var.resource_group_name_az104-06-rg1
+  resource_group_name = "az104-06-rg1"
   enable_ip_forwarding = true
 
     ip_configuration {
@@ -37,7 +37,7 @@ resource "azurerm_network_interface" "vm01" {
 resource "azurerm_network_interface" "vm02" {
   name                = "vm2-nic"
   location            = var.resource_group_name_location
-  resource_group_name = var.resource_group_name_az104-06-rg1
+  resource_group_name = "az104-06-rg1"
   enable_ip_forwarding = true
 
     ip_configuration {
@@ -55,7 +55,7 @@ resource "azurerm_network_interface" "vm02" {
 resource "azurerm_network_interface" "vm03" {
   name                = "vm3-nic"
   location            = var.resource_group_name_location
-  resource_group_name = var.resource_group_name_az104-06-rg1
+  resource_group_name = "az104-06-rg1"
   enable_ip_forwarding = true
 
     ip_configuration {
