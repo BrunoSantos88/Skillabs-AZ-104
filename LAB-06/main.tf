@@ -128,3 +128,27 @@ resource "azurerm_network_interface" "vm03" {
     environment = "az106-06-vm3"
     }
 }
+
+#VMS
+resource "azurerm_windows_virtual_machine" "main" {
+  name           = "az104-06-vm0"
+  admin_username = "testadmin"
+  admin_password = "Password1234!"
+  location              = var.location
+  resource_group_name   = var.resoucegroup
+  network_interface_ids = [azurerm_network_interface.interface0.id]
+  size                  = "Standard_DS1_v2"
+
+  os_disk {
+    name                 = "myOsDisk"
+    caching              = "ReadWrite"
+    storage_account_type = "Premium_LRS"
+  }
+
+  source_image_reference {
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2022-datacenter-azure-edition"
+    version   = "latest"
+  }
+}
