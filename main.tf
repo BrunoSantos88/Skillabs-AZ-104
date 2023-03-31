@@ -9,5 +9,5 @@
 #}
 
 module "LAB-HUBSPOCK" {
-  source = "./LAB-06"
+  source = "./LAB06-HubSpock"
 }
