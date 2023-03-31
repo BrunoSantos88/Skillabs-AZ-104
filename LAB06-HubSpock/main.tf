@@ -67,7 +67,7 @@ resource "azurerm_subnet" "subnet3" {
 }
 
 # interface de Rede
-resource "azurerm_network_interface" "interface0" {
+resource "azurerm_network_interface" "vm00" {
   name                = "vm0nic"
   location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
