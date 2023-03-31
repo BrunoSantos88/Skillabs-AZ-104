@@ -183,6 +183,6 @@ resource "azurerm_route_table" "az10406" {
 }
 
 resource "azurerm_subnet_route_table_association" "routeaz104" {
-  subnet_id      = "subnet1"
-  route_table_id = azurerm_subnet.subnet1.id
+  subnet_id      = azurerm_subnet.subnet1.id
+  route_table_id = azurerm_route_table.az10406.id
 }
