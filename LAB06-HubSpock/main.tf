@@ -160,29 +160,3 @@ resource "azurerm_virtual_network_peering" "vnet1_to_vnet3" {
   allow_gateway_transit        = false
   use_remote_gateways          = false
 }
-
-
-### route Table
-resource "azurerm_route_table" "az10406" {
-  name                = "az104-06-rt32"
-  location            = azurerm_resource_group.az104-06.location
-  resource_group_name = azurerm_resource_group.az104-06.name
-
-  route {
-    name           = "az104-06-route-vnet0-to-vnet3"
-    address_prefix = "10.63.0.0/24"
-    next_hop_type  = "VirtualAppliance"
-  }
-
-  route {
-    name           = "az104-06-route-vnet0-to-vnet3"
-    address_prefix = "10.60.0.0/24"
-    next_hop_type  = "VirtualAppliance"
-    next_hop_in_ip_address = "10.60.0.4"
-  }
-}
-
-resource "azurerm_subnet_route_table_association" "routeaz104" {
-  subnet_id      = azurerm_subnet.subnet0.id
-  route_table_id = azurerm_route_table.az10406.id
-}
