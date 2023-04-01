@@ -183,6 +183,6 @@ resource "azurerm_route_table" "rt23" {
 }
 
 resource "azurerm_subnet_route_table_association" "rt23" {
-  subnet_id      = azurerm_subnet.subnet0.name
+  subnet_id      = azurerm_subnet.subnet0.id
   route_table_id = azurerm_route_table.rt23.id
 }
