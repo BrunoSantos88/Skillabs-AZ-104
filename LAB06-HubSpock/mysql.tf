@@ -54,10 +54,9 @@ resource "azurerm_network_interface" "mysq-vnet" {
 
 resource "azurerm_mysql_virtual_network_rule" "example" {
   name                = "example-vnet-rule"
-  resource_group_name = "example-resource-group"
+  resource_group_name = azurerm_resource_group.az104-06.name
   server_name         = azurerm_mysql_server.az104myzsql.name
   subnet_id           = azurerm_subnet.mysql-subnet.id
-  virtual_network_subnet_id = azurerm_network_interface.mysq-vnet.id
 
   depends_on = [
     azurerm_subnet.mysql-subnet,
