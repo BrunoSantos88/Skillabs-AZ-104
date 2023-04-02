@@ -7,25 +7,17 @@ resource "azurerm_linux_virtual_machine" "az104-vm0" {
   disable_password_authentication = true
   network_interface_ids = [azurerm_network_interface.vm00.id]
 
-
   os_disk {
-    name              = "my-os-disk"
+    name              = "myosdisk"
     caching           = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
 
-  storage_image_reference {
+  source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
-  }
-
-  storage_os_disk {
-    name              = "my-storage-os-disk"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
   }
 
   ssh_key {
