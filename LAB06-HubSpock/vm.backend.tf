@@ -6,9 +6,10 @@ resource "azurerm_linux_virtual_machine" "az-104-vm2" {
     size                  = "Standard_DS1_v2"
 
     os_disk {
-        name              = "az104-disk2"
-        caching           = "ReadWrite"
+        name                 = "az104-disk2"
+        caching              = "ReadWrite"
         storage_account_type = "Premium_LRS"
+        disk_size_gb         = "160"
     }
 
     source_image_reference {
