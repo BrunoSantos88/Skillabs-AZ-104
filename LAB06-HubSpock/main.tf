@@ -187,7 +187,7 @@ resource "azurerm_route" "route2" {
   resource_group_name = azurerm_resource_group.az104-06.name
 }
 
-resource "azurerm_subnet_route_table_association" "example" {
+resource "azurerm_subnet_route_table_association" "rt23" {
   subnet_id      = azurerm_subnet.subnet0.id
   route_table_id = azurerm_route_table.rt23.id
 }
@@ -217,7 +217,7 @@ resource "azurerm_route" "route2" {
   resource_group_name = azurerm_resource_group.az104-06.name
 }
 
-resource "azurerm_subnet_route_table_association" "example" {
+resource "azurerm_subnet_route_table_association" "rt32" {
   subnet_id      = azurerm_subnet.subnet1.id
   route_table_id = azurerm_route_table.rt23.id
 }
