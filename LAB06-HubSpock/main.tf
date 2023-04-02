@@ -152,9 +152,9 @@ resource "azurerm_virtual_network_peering" "vnet1_to_vnet2" {
 }
 
 resource "azurerm_virtual_network_peering" "vnet1_to_vnet3" {
-  name                         = "vnet1-to-vnet3"
+  name                         = "vnet2-to-vnet3"
   resource_group_name          = azurerm_resource_group.az104-06.name
-  virtual_network_name         = azurerm_virtual_network.vnet1.name
+  virtual_network_name         = azurerm_virtual_network.vnet2.name
   remote_virtual_network_id    = azurerm_virtual_network.vnet3.id
   allow_forwarded_traffic      = true
   allow_gateway_transit        = false
@@ -201,9 +201,9 @@ resource "azurerm_route_table" "rt32" {
 
   resource "azurerm_route" "rt32-route1" {
   name                = "route-1"
-  address_prefix      = "10.63.0.0/24"
+  address_prefix      = "10.62.0.0/24"
   next_hop_type       = "VirtualAppliance"
-  next_hop_in_ip_address = "10.63.0.4"
+  next_hop_in_ip_address = "10.62.0.4"
   route_table_name    = azurerm_route_table.rt32.name
   resource_group_name = azurerm_resource_group.az104-06.name
 }
