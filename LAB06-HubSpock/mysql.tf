@@ -32,7 +32,7 @@ resource "azurerm_network_interface" "example" {
 
 
 resource "azurerm_mysql_server" "example" {
-  name                = "example-mysqlserver"
+  name                = "az104mysqlserver"
   location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
 
