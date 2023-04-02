@@ -12,6 +12,12 @@ resource "azurerm_linux_virtual_machine" "az104-vm0" {
     version   = "latest"
   }
 
+   os_profile {
+    computer_name  = "my-vm"
+    admin_username = "adminuser"
+    admin_password = "adminpassword"
+  }
+
   tags = {
     environment = "frontend"
   }
