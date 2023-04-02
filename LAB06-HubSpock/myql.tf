@@ -10,7 +10,7 @@ resource "azurerm_mysql_server" "example" {
   administrator_login_password = "password123"
 
   # Configure the server to use the example-subnet
-  subnet_id = azurerm_subnet.subnet3.id
+  subnet_id = azurerm_subnet.subnet3.name
   public_network_access_enabled = false
 
 }
