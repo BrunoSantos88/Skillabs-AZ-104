@@ -9,7 +9,6 @@ resource "azurerm_mysql_server" "az104-06sql" {
 sku {
     name     = "GP_Gen5_2"
     tier     = "GeneralPurpose"
-    capacity = 2
   }
   
   storage_profile {
