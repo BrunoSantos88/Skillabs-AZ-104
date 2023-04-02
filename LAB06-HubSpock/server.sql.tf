@@ -2,8 +2,8 @@ resource "azurerm_mysql_server" "az104mysql" {
   name                = "myzsqlserver"
   location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
-  administrator_login = "admynadmin"
-  administrator_login_password = "*mulekao1988*"
+  administrator_login = "AdmimAdmym88"
+  administrator_login_password = "*Mulekao1988*"
   sku_name   = "GP_Gen5_2"
   storage_mb = 5120
   version    = "5.7"
