@@ -1,5 +1,5 @@
 resource "azurerm_mysql_server" "az104-06sql" {
-  name                = "az104-06SQL"
+  name                = "az10406sql"
   location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
   administrator_login = "adminadmin"
@@ -18,7 +18,7 @@ resource "azurerm_mysql_server" "az104-06sql" {
 }
 
 resource "azurerm_mysql_database" "example" {
-  name                = "exampledb"
+  name                = "az104sql"
   resource_group_name = azurerm_resource_group.az104-06.name
   server_name         = azurerm_mysql_server.az104-06sql.id
   charset             = "utf8"
@@ -26,7 +26,7 @@ resource "azurerm_mysql_database" "example" {
 }
 
 resource "azurerm_mysql_virtual_network_rule" "az104-06netsql" {
-  name                = "az10406-mysql-vnet-rule"
+  name                = "az10406-mysqlrules"
   server_name         = azurerm_mysql_server.az104-06sql.name
   resource_group_name = azurerm_resource_group.az104-06.name
   subnet_id           = azurerm_subnet.subnet3.id
