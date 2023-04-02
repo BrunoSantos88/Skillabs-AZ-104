@@ -11,4 +11,6 @@ resource "azurerm_mssql_virtual_network_rule" "example" {
   name      = "sql-vnet-rule"
   server_id = azurerm_mssql_server.example.id
   subnet_id = azurerm_subnet.subnet3.id
+  private_ip_address_allocation = "Static"
+  private_ip_address            = "10.63.0.4"
 }
