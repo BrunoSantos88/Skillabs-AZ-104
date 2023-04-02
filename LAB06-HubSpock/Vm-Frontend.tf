@@ -6,7 +6,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     size                  = "Standard_DS1_v2"
 
     os_disk {
-        name              = "myOsDisk"
+        name              = "az104-disk0"
         caching           = "ReadWrite"
         storage_account_type = "Premium_LRS"
     }
@@ -29,7 +29,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
 
 
     tags = {
-        environment = "Frontend-02"
+        environment = "Frontend-01"
     }
 }
 
@@ -41,7 +41,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     size                  = "Standard_DS1_v2"
 
     os_disk {
-        name              = "myOsDisk"
+        name              = "az104-disk1"
         caching           = "ReadWrite"
         storage_account_type = "Premium_LRS"
     }
@@ -64,6 +64,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
 
 
     tags = {
-        environment = "Frontend-01"
+        environment = "Frontend-02"
     }
 }
