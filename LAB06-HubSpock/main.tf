@@ -162,7 +162,6 @@ resource "azurerm_virtual_network_peering" "vnet1_to_vnet3" {
 }
 
 #routetable
-
 resource "azurerm_route_table" "rt23" {
   name                = "az-10406-rt23"
   location            = "East US"
@@ -190,5 +189,35 @@ resource "azurerm_route" "route2" {
 
 resource "azurerm_subnet_route_table_association" "example" {
   subnet_id      = azurerm_subnet.subnet0.id
+  route_table_id = azurerm_route_table.rt23.id
+}
+
+resource "azurerm_route_table" "rt32" {
+  name                = "az-10406-rt32"
+  location            = "East US"
+  resource_group_name = azurerm_resource_group.az104-06.name
+}
+
+
+  resource "azurerm_route" "route1" {
+  name                = "route-1"
+  address_prefix      = "10.63.0.0/24"
+  next_hop_type       = "VirtualAppliance"
+  next_hop_in_ip_address = "10.63.0.4"
+  route_table_name    = azurerm_route_table.rt32.name
+  resource_group_name = azurerm_resource_group.az104-06.name
+}
+
+resource "azurerm_route" "route2" {
+  name                = "route-2"
+  address_prefix      = "10.60.1.0/24"
+  next_hop_type       = "VirtualAppliance"
+  next_hop_in_ip_address = "10.60.1.4"
+  route_table_name    = azurerm_route_table.rt32.name
+  resource_group_name = azurerm_resource_group.az104-06.name
+}
+
+resource "azurerm_subnet_route_table_association" "example" {
+  subnet_id      = azurerm_subnet.subnet1.id
   route_table_id = azurerm_route_table.rt23.id
 }
