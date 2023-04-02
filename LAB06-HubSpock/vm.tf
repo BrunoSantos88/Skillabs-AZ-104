@@ -25,10 +25,6 @@ resource "azurerm_linux_virtual_machine" "az104-vm0" {
     admin_password = "adminpassword"
   }
 
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
-
   tags = {
     environment = "frontend"
   }
