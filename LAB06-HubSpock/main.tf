@@ -234,7 +234,7 @@ resource "azurerm_route_table" "rt42" {
   address_prefix      = "10.63.0.0/24"
   next_hop_type       = "VirtualAppliance"
   next_hop_in_ip_address = "10.63.0.4"
-  route_table_name    = azurerm_route_table.rt32.name
+  route_table_name    = azurerm_route_table.rt42.name
   resource_group_name = azurerm_resource_group.az104-06.name
 }
 
