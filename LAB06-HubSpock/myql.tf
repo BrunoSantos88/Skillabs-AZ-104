@@ -1,21 +1,29 @@
-resource "azurerm_mysql_server" "example" {
-  name                = "mydatabase"
+resource "azurerm_virtual_network" "example" {
+  name                = "example-vnet"
   location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
-  administrator_login          = "myadminuser"
-  administrator_login_password = "myadminpassword"
+  address_space       = ["10.0.0.0/16"]
+
+  subnet {
+    name           = "example-subnet"
+    address_prefix = "10.0.1.0/24"
+  }
+}
+
+
+resource "azurerm_mysql_server" "example" {
+  name                = "example-mysql-server"
+  location            = azurerm_resource_group.az104-06.location
+  resource_group_name = azurerm_resource_group.az104-06.name
+  sku_name            = "B_Gen5_1"
+  storage_mb          = 5120
   version             = "5.7"
 
-  sku_name   = "B_Gen5_1"
-  storage_mb = 5120
+  administrator_login          = "mysqladmin"
+  administrator_login_password = "password123"
 
-  ssl_enforcement_enabled = true
+  # Configure the server to use the example-subnet
+  vnet_subnet_id = azurerm_virtual_network.example.subnet.id
+  public_network_access_enabled = false
 
-  private_endpoint_connections {
-    name                          = "myprivateendpoint"
-    private_connection_resource_id = azurerm_mysql_server.example.id
-    is_manual_connection          = false
-    private_connection_subnet_id  = azurerm_subnet.subnet3.id
-    private_ip_address            = "10.63.0.4" # Static IP address for MySQL server in the subnet
-  }
 }
