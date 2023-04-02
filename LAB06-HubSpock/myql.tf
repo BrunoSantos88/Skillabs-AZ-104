@@ -14,9 +14,7 @@ resource "azurerm_mysql_server" "example" {
     name                          = "myprivateendpoint"
     private_connection_resource_id = azurerm_mysql_server.example.id
     is_manual_connection          = false
-    private_connection_subnet_id  = azurerm_subnet.example.id
-    private_ip_address            = "10.63.0.4" # Static IP address for MySQL server in the subnet
+    private_connection_subnet_id  = azurerm_subnet.subent3.id
+    private_ip_address            = "10.0.1.5" # Static IP address for MySQL server in the subnet
   }
-
-  subnet_id = azurerm_subnet.subnet3.id
 }
