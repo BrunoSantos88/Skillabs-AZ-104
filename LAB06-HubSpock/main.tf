@@ -219,5 +219,5 @@ resource "azurerm_route" rt32-route2 {
 
 resource "azurerm_subnet_route_table_association" "rt32" {
   subnet_id      = azurerm_subnet.subnet1.id
-  route_table_id = azurerm_route_table.rt23.id
+  route_table_id = azurerm_route_table.rt32.id
 }
