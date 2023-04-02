@@ -26,40 +26,32 @@ resource "azurerm_mysql_database" "az104mywsql" {
 }
 
 ###regras de rede
-resource "azurerm_virtual_network" "myqlvnet" {
-  name                = "myql-vnet"
-  address_space       = ["10.0.0.0/16"]
+resource "azurerm_network_interface" "vm03" {
+  name                = "vm3nic"
   location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
-}
+  enable_ip_forwarding = true
 
-resource "azurerm_subnet" "mysql-subnet" {
-  name                 = "mysql-subnet"
-  resource_group_name = azurerm_resource_group.az104-06.name
-  virtual_network_name = azurerm_virtual_network.myqlvnet.name
-  address_prefixes     = ["10.63.0.0/24"]
-}
+    ip_configuration {
+    name                          = "vm3nic"
+    subnet_id                     = azurerm_subnet.subnet3.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.63.0.4"
+    }
 
-resource "azurerm_network_interface" "mysq-vnet" {
-  name                = "mysql-nic"
-  location            = azurerm_resource_group.az104-06.location
-  resource_group_name = azurerm_resource_group.az104-06.name
-
-  ip_configuration {
-    name                          = "example-ip-config"
-    subnet_id                     = azurerm_subnet.mysql-subnet.id
-    private_ip_address_allocation = "Dynamic"
-  }
+    tags = {
+    environment = "az106-06-vm3"
+    }
 }
 
 resource "azurerm_mysql_virtual_network_rule" "example" {
   name                = "example-vnet-rule"
   resource_group_name = azurerm_resource_group.az104-06.name
   server_name         = azurerm_mysql_server.az104myzsql.name
-  subnet_id           = azurerm_subnet.mysql-subnet.id
+  subnet_id           = azurerm_subnet.subnet3.id
 
   depends_on = [
-    azurerm_subnet.mysql-subnet,
-    azurerm_network_interface.mysq-vnet
+    azurerm_subnet.subnet3,
+    azurerm_network_interface.vm03
   ]
 }
