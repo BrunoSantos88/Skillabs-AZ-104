@@ -1,4 +1,4 @@
-data "azurerm_image" "ubuntu-vm0" {
+data "azurerm_image" "ubuntu" {
   name                = "UbuntuServer"
   resource_group_name = "Canonical"
   publisher           = "Canonical"
@@ -21,7 +21,7 @@ resource "azurerm_virtual_machine" "az104-06-v0" {
   }
 
   storage_image_reference {
-    id = data.azurerm_image.ubuntu-vm0.id
+    id = data.azurerm_image.ubuntu.id
   }
 
   os_profile {
