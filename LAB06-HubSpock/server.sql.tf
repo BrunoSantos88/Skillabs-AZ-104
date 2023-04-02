@@ -25,7 +25,7 @@ resource "azurerm_mysql_database" "az104mywsql" {
   collation           = "utf8_unicode_ci"
 }
 
-resource "azurerm_mysql_virtual_network_rule" "az104-sqlrules" {
+resource "azurerm_mysql_virtual_network_rule" "mysqlrules" {
   name                = "mysqlrules"
   server_name         = azurerm_mysql_server.az104myzsql.name
   resource_group_name = azurerm_resource_group.az104-06.name
