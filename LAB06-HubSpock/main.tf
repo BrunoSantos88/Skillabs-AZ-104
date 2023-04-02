@@ -176,6 +176,7 @@ resource "azurerm_route_table" "rt23" {
   next_hop_type       = "VirtualAppliance"
   next_hop_in_ip_address = "10.62.0.4"
   route_table_name    = azurerm_route_table.rt23.name
+  resource_group_name = azurerm_resource_group.az104-06.name
 }
 
 resource "azurerm_route" "route2" {
@@ -184,6 +185,7 @@ resource "azurerm_route" "route2" {
   next_hop_type       = "VirtualAppliance"
   next_hop_in_ip_address = "10.60.0.4"
   route_table_name    = azurerm_route_table.rt23.name
+  resource_group_name = azurerm_resource_group.az104-06.name
 }
 
 resource "azurerm_subnet_route_table_association" "example" {
