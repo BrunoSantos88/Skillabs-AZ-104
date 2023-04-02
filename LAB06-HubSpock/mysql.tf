@@ -25,9 +25,42 @@ resource "azurerm_mysql_database" "az104mywsql" {
   collation           = "utf8_unicode_ci"
 }
 
-resource "azurerm_mysql_virtual_network_rule" "example" {
-  name                = "mysql-vnet-rule"
+###regras de rede
+resource "azurerm_virtual_network" "myqlvnet" {
+  name                = "myql-vnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = azurerm_resource_group.az104-06.location
   resource_group_name = azurerm_resource_group.az104-06.name
+}
+
+resource "azurerm_subnet" "mysql-subnet" {
+  name                 = "mysql-subnet"
+  resource_group_name = azurerm_resource_group.az104-06.name
+  virtual_network_name = azurerm_virtual_network.myqlvnet.name
+  address_prefixes     = ["10.63.0.0/24"]
+}
+
+resource "azurerm_network_interface" "mysq-vnet" {
+  name                = "mysql-nic"
+  location            = azurerm_resource_group.az104-06.location
+  resource_group_name = azurerm_resource_group.az104-06.name
+
+  ip_configuration {
+    name                          = "example-ip-config"
+    subnet_id                     = azurerm_subnet.mysql-subnet.id
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+
+resource "azurerm_mysql_virtual_network_rule" "example" {
+  name                = "example-vnet-rule"
+  resource_group_name = "example-resource-group"
   server_name         = azurerm_mysql_server.az104myzsql.name
-  subnet_id           = azurerm_subnet.subnet3.id
+  subnet_id           = azurerm_subnet.mysql-subnet.id
+  virtual_network_subnet_id = azurerm_network_interface.mysq-vnet.id
+
+  depends_on = [
+    azurerm_subnet.mysql-subnet,
+    azurerm_network_interface.mysq-vnet
+  ]
 }
