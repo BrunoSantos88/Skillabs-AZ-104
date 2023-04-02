@@ -12,6 +12,13 @@ resource "azurerm_linux_virtual_machine" "az104-vm0" {
     version   = "latest"
   }
 
+   storage_os_disk {
+    name              = "my-os-disk"
+    caching           = "ReadWrite"
+    create_option     = "FromImage"
+    managed_disk_type = "Standard_LRS"
+  }
+
    os_profile {
     computer_name  = "my-vm"
     admin_username = "adminuser"
