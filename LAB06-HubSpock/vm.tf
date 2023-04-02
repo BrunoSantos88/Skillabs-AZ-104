@@ -7,7 +7,6 @@ resource "azurerm_linux_virtual_machine" "az104-vm0" {
   size                 = "Standard_B2s"
   admin_username       = "myadminusername"
   admin_password       = "myadminpassword"
-  disable_password_auth = false
 
   os_disk {
     name              = "myosdisk"
