@@ -4,22 +4,25 @@ resource "azurerm_mysql_server" "az104-06sql" {
   resource_group_name = azurerm_resource_group.az104-06.name
   administrator_login = "exampleadmin"
   administrator_login_password = "examplepassword"
-  sku_name   = "GP_Gen5_16"
+  sku_name   = "GP_Gen5_2"
   storage_mb = 5120
   version    = "5.7"
 
-  storage_profile {
-    storage_mb            = 5120
-    backup_retention_days = 7
-    geo_redundant_backup  = "Disabled"
-  }
+  auto_grow_enabled                 = true
+  backup_retention_days             = 7
+  geo_redundant_backup_enabled      = true
+  infrastructure_encryption_enabled = true
+  public_network_access_enabled     = false
+  ssl_enforcement_enabled           = true
+  ssl_minimal_tls_version_enforced  = "TLS1_2"
 }
 
-resource "azurerm_mysql_configuration" "ssl" {
-  name                = "ssl-enforcement"
+resource "azurerm_mysql_database" "example" {
+  name                = "exampledb"
   resource_group_name = azurerm_resource_group.az104-06.name
-  server_name         = azurerm_mysql_server.az104-06sql.name
-  value               = "Enabled"
+  server_name         = azurerm_mysql_server.az104-06sql.id
+  charset             = "utf8"
+  collation           = "utf8_unicode_ci"
 }
 
 resource "azurerm_mysql_virtual_network_rule" "az104-06netsql" {
