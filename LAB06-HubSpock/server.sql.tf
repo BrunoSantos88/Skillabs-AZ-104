@@ -5,12 +5,6 @@ resource "azurerm_mysql_server" "az104-06sql" {
   administrator_login = "exampleadmin"
   administrator_login_password = "examplepassword"
 
-  sku {
-    name     = "GP_Gen5_2"
-    tier     = "GeneralPurpose"
-    capacity = 2
-  }
-
   storage_profile {
     storage_mb            = 5120
     backup_retention_days = 7
