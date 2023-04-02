@@ -15,14 +15,12 @@ resource "azurerm_mysql_server" "az104-06sql" {
   }
 }
 
-
-resource "azurerm_mysql_configuration" "example" {
+resource "azurerm_mysql_configuration" "ssl" {
   name                = "ssl-enforcement"
-  resource_group_name = "example-resource-group"
+  resource_group_name = azurerm_resource_group.az104-06.name
   server_name         = azurerm_mysql_server.az104-06sql.name
-  value               = "OFF"
+  value               = "Enabled"
 }
-
 
 resource "azurerm_mysql_virtual_network_rule" "az104-06netsql" {
   name                = "example-mysql-vnet-rule"
