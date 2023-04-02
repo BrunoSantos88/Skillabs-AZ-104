@@ -33,3 +33,23 @@ resource "azurerm_linux_virtual_machine" "az-104-vm2" {
         environment = "Backend"
     }
 }
+
+#interface de Rede
+
+resource "azurerm_network_interface" "vm02" {
+  name                = "vm2nic"
+  location            = azurerm_resource_group.az104-06.location
+  resource_group_name = azurerm_resource_group.az104-06.name
+  enable_ip_forwarding = true
+
+    ip_configuration {
+    name                          = "vm2nic"
+    subnet_id                     = azurerm_subnet.subnet2.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.62.0.4"
+    }
+
+    tags = {
+    environment = "az106-06-vm2"
+    }
+}
