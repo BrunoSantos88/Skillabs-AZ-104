@@ -14,3 +14,11 @@ resource "azurerm_mysql_server" "example" {
   public_network_access_enabled = false
 
 }
+
+resource "azurerm_mysql_database" "example" {
+  name                = "example-mysql-database"
+  server_name         = azurerm_mysql_server.example.id
+  resource_group_name = azurerm_resource_group.az104-06.name
+  charset             = "utf8"
+  collation           = "utf8_general_ci"
+}
