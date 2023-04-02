@@ -161,7 +161,7 @@ resource "azurerm_virtual_network_peering" "vnet1_to_vnet3" {
   use_remote_gateways          = false
 }
 
-#routetable
+#rout RT23
 resource "azurerm_route_table" "rt23" {
   name                = "az-10406-rt23"
   location            = "East US"
@@ -192,12 +192,13 @@ resource "azurerm_subnet_route_table_association" "rt23" {
   route_table_id = azurerm_route_table.rt23.id
 }
 
+
+##routeRT32
 resource "azurerm_route_table" "rt32" {
   name                = "az-10406-rt32"
   location            = "East US"
   resource_group_name = azurerm_resource_group.az104-06.name
 }
-
 
   resource "azurerm_route" "rt32-route1" {
   name                = "route-1"
@@ -219,5 +220,5 @@ resource "azurerm_route" rt32-route2 {
 
 resource "azurerm_subnet_route_table_association" "rt32" {
   subnet_id      = azurerm_subnet.subnet1.id
-  route_table_id = azurerm_route_table.rt23.id
+  route_table_id = azurerm_route_table.rt32.id
 }
