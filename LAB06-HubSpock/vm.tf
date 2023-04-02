@@ -27,6 +27,8 @@ resource "azurerm_linux_virtual_machine" "az-104vm0" {
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
+
+
+    }
   }
-}
 }
