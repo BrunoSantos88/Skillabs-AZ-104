@@ -4,21 +4,15 @@ resource "azurerm_mysql_server" "az104-06sql" {
   resource_group_name = azurerm_resource_group.az104-06.name
   administrator_login = "exampleadmin"
   administrator_login_password = "examplepassword"
-
-
-  sku {
-    name     = "GP_Gen5_2"
-    tier     = "GeneralPurpose"
-    capacity = 2
-  }
+  sku_name   = "GP_Gen5_16"
+  storage_mb = 5120
+  version    = "5.7"
 
   storage_profile {
     storage_mb            = 5120
     backup_retention_days = 7
     geo_redundant_backup  = "Disabled"
   }
-
-  version = "5.7"
 }
 
 
