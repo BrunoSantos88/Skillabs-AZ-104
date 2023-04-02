@@ -20,12 +20,12 @@ resource "azurerm_mysql_server" "az104myzsql" {
 resource "azurerm_mysql_database" "az104mywsql" {
   name                = "mywsqlserver"
   resource_group_name = azurerm_resource_group.az104-06.name
-  server_name         = azurerm_mysql_server.az104myzsql.id
+  server_name         = azurerm_mysql_server.az104myzsql.name
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
 }
 
-resource "azurerm_mysql_virtual_network_rule" "az104-06netsql" {
+resource "azurerm_mysql_virtual_network_rule" "myqlrules" {
   name                = "myosqlrules"
   server_name         = azurerm_mysql_server.az104myzsql.name
   resource_group_name = azurerm_resource_group.az104-06.name
