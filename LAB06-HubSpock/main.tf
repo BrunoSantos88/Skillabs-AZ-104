@@ -229,7 +229,7 @@ resource "azurerm_route_table" "rt42" {
 }
 
 
-  resource "azurerm_route" "rt32-route1" {
+  resource "azurerm_route" "rt42-route1" {
   name                = "route-1"
   address_prefix      = "10.63.0.0/24"
   next_hop_type       = "VirtualAppliance"
@@ -238,7 +238,7 @@ resource "azurerm_route_table" "rt42" {
   resource_group_name = azurerm_resource_group.az104-06.name
 }
 
-resource "azurerm_route" rt32-route2 {
+resource "azurerm_route" rt42-route2 {
   name                = "route-2"
   address_prefix      = "10.62.0.0/24"
   next_hop_type       = "VirtualAppliance"
