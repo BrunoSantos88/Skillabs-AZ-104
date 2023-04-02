@@ -26,7 +26,7 @@ resource "azurerm_mysql_database" "az104mywsql" {
 }
 
 resource "azurerm_mysql_virtual_network_rule" "myqlrules" {
-  name                = "myosqlrules"
+  name                = "server-mysqlrules"
   server_name         = azurerm_mysql_server.az104myzsql.name
   resource_group_name = azurerm_resource_group.az104-06.name
   subnet_id           = azurerm_subnet.subnet3.id
