@@ -169,7 +169,7 @@ resource "azurerm_route_table" "rt23" {
 }
 
 
-  resource "azurerm_route" "route1" {
+  resource "azurerm_route" "rt23-route1" {
   name                = "route-1"
   address_prefix      = "10.62.0.0/24"
   next_hop_type       = "VirtualAppliance"
@@ -178,7 +178,7 @@ resource "azurerm_route_table" "rt23" {
   resource_group_name = azurerm_resource_group.az104-06.name
 }
 
-resource "azurerm_route" "route2" {
+resource "azurerm_route" "rt23-route2" {
   name                = "route-2"
   address_prefix      = "10.60.0.0/24"
   next_hop_type       = "VirtualAppliance"
@@ -199,7 +199,7 @@ resource "azurerm_route_table" "rt32" {
 }
 
 
-  resource "azurerm_route" "route1" {
+  resource "azurerm_route" "rt32-route1" {
   name                = "route-1"
   address_prefix      = "10.63.0.0/24"
   next_hop_type       = "VirtualAppliance"
@@ -208,7 +208,7 @@ resource "azurerm_route_table" "rt32" {
   resource_group_name = azurerm_resource_group.az104-06.name
 }
 
-resource "azurerm_route" "route2" {
+resource "azurerm_route" rt32-route2 {
   name                = "route-2"
   address_prefix      = "10.60.1.0/24"
   next_hop_type       = "VirtualAppliance"
