@@ -13,21 +13,8 @@ resource "azurerm_network_security_rule" "http" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "80"
-   source_address_prefixes     = ["201.26.53.221/32"]
+  source_address_prefixes     = "*"
   destination_address_prefix  = "*"
-
-  security_rule {
-    name                       = "ssh"
-    priority                   = 1001
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "22"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-
 
   resource_group_name = azurerm_resource_group.az104-04.name
   network_security_group_name = azurerm_network_security_group.example.name
