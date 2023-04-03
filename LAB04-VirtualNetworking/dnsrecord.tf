@@ -7,7 +7,7 @@ resource "azurerm_dns_zone" "contoso" {
 # Create an A record for the primary VM
 resource "azurerm_dns_a_record" "primary" {
   name                = "www"
-  zone_name           = azurerm_dns_zone.contoso.name
+  zone_name           = azurerm_dns_zone.contoso.id
   records             = [azurerm_public_ip.mypublicip0.id]
   ttl                 = 300
 }
@@ -15,7 +15,7 @@ resource "azurerm_dns_a_record" "primary" {
 # Create an A record for the secondary VM
 resource "azurerm_dns_a_record" "secondary" {
   name                = "www"
-  zone_name           = azurerm_dns_zone.contoso.name
+  zone_name           = azurerm_dns_zone.contoso.id
   records             = [azurerm_public_ip.mypublicip1.id]
   ttl                 = 300
 }
