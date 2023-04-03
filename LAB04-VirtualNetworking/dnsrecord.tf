@@ -1,6 +1,6 @@
 # Create the Azure DNS Zone for the domain
 resource "azurerm_dns_zone" "contoso" {
-  name                = "server.contoso.com"
+  name                = "contoso.com"
   resource_group_name = azurerm_resource_group.az104-04.name
 }
 
@@ -8,7 +8,7 @@ resource "azurerm_dns_a_record" "primary" {
   name                = "www"
   resource_group_name = azurerm_resource_group.az104-04.name
   zone_name           = azurerm_dns_zone.contoso.name
-  records             = ["20.51.163.99"]
+  records             = [azurerm_public_ip.mypublicip0.id]
   ttl                 = 300
 }
 
@@ -17,6 +17,6 @@ resource "azurerm_dns_a_record" "secondary" {
   name                = "www"
   resource_group_name = azurerm_resource_group.az104-04.name
   zone_name           = azurerm_dns_zone.contoso.name
-  records             = ["74.235.3.15"]
+  records             = [azurerm_public_ip.mypublicip1.id]
   ttl                 = 300
 }
