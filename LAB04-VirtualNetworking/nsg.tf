@@ -19,20 +19,6 @@ resource "azurerm_network_security_rule" "http" {
   network_security_group_name = azurerm_network_security_group.example.name
 }
 
-resource "azurerm_network_security_rule" "ssh" {
-  name                        = "http-rule"
-  priority                    = 1001
-  direction                   = "Inbound"
-  access                      = "Allow"
-  protocol                    = "Tcp"
-  source_port_range           = "*"
-  destination_port_range      = "22"
-  source_address_prefix       = "*"
-  destination_address_prefix  = "*"
-  resource_group_name = azurerm_resource_group.az104-04.name
-  network_security_group_name = azurerm_network_security_group.example.name
-}
-
 # Associate the NSG with the NIC
 resource "azurerm_network_interface_security_group_association" "associate0" {
   network_interface_id    = azurerm_network_interface.vm00.id
