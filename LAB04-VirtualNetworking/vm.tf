@@ -25,7 +25,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
 
     computer_name  = "az104-vm0"
     admin_username = "azureuser"
-    admin_password = "P@ssw0rd1234"
     disable_password_authentication = true
 
 
@@ -65,7 +64,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
 
     computer_name  = "az104-vm1"
     admin_username = "azureuser"
-    admin_password = "P@ssw0rd1234"
     disable_password_authentication = true
 
     admin_ssh_key {
