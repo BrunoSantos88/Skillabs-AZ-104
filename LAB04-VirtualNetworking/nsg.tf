@@ -13,7 +13,7 @@ resource "azurerm_network_security_rule" "http" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "80"
-  source_address_prefix       = "*"
+   source_address_prefixes     = ["201.26.53.221/32"]
   destination_address_prefix  = "*"
   resource_group_name = azurerm_resource_group.az104-04.name
   network_security_group_name = azurerm_network_security_group.example.name
