@@ -18,11 +18,10 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
         version   = "latest"
     }
 
-os_profile {
+
     computer_name  = "az104-vm1"
     admin_username = "azureuser"
     disable_password_authentication = true
-}
 
     tags = {
         environment = "VM1"
@@ -49,11 +48,9 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
         version   = "latest"
     }
 
-os_profile {
     computer_name  = "az104-vm0"
     admin_username = "azureuser"
     disable_password_authentication = true
-}
 
     tags = {
         environment = "VM0"
