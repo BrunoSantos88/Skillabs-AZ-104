@@ -8,6 +8,7 @@ resource "azurerm_dns_zone" "contoso" {
 resource "azurerm_dns_a_record" "primary" {
   name                = "www"
   zone_name           = azurerm_dns_zone.contoso.id
+  resource_group_name = azurerm_resource_group.az104-04.name
   records             = [azurerm_public_ip.mypublicip0.id]
   ttl                 = 300
 }
@@ -16,6 +17,7 @@ resource "azurerm_dns_a_record" "primary" {
 resource "azurerm_dns_a_record" "secondary" {
   name                = "www"
   zone_name           = azurerm_dns_zone.contoso.id
+  resource_group_name = azurerm_resource_group.az104-04.name
   records             = [azurerm_public_ip.mypublicip1.id]
   ttl                 = 300
 }
