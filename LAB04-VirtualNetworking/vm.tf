@@ -4,9 +4,10 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     resource_group_name = azurerm_resource_group.az104-04.name
     network_interface_ids = [azurerm_network_interface.vm00.id]
     size                  = "Standard_DS1_v2"
-    computer_name  = "az104-vm0"
-    admin_username = "azureuser"
+    computer_name         = "az104-vm0"
+    admin_username        = "azureuser"
     disable_password_authentication = true
+    custom_data    = file("nginx.sh")
 
     os_disk {
         name              = "az104-disk0"
