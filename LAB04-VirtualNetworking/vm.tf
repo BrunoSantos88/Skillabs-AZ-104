@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     resource_group_name = azurerm_resource_group.az104-04.name
     network_interface_ids = [azurerm_network_interface.vm01.id]
     size                  = "Standard_DS1_v2"
-    custom_data = base64encode(file("setup.sh"))
+    custom_data = base64encode(file("nginx.sh"))
 
     os_disk {
         name              = "az104-disk1"
