@@ -5,14 +5,14 @@ resource "azurerm_network_interface" "vm00" {
   resource_group_name = azurerm_resource_group.az104-04.name
   enable_ip_forwarding = true
 
-    ip_configuration {
-    name                          = "piblicip-0"
+ip_configuration {
+    name                          = "vm0nic"
     subnet_id                     = azurerm_subnet.subnet1.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.mypublicip0.id
-  }
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.40.0.4"
+    }
 
-  tags = {
+    tags = {
     environment = "az106-04-vm0"
     }
 }
@@ -25,12 +25,11 @@ resource "azurerm_network_interface" "vm01" {
   enable_ip_forwarding = true
 
    ip_configuration {
-    name                          = "publicip1"
-    subnet_id                     = azurerm_subnet.subnet2.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.mypublicip1.id
-  }
-
+    name                          = "vm0nic"
+    subnet_id                     = azurerm_subnet.subnet1.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.40.1.4"
+    }
 
     tags = {
     environment = "az106-04-vm1"
