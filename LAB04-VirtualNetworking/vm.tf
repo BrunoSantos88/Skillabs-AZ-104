@@ -5,6 +5,10 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     network_interface_ids = [azurerm_network_interface.vm01.id]
     size                  = "Standard_DS1_v2"
 
+  os_profile_linux_config {
+  custom_data = base64encode(file("setup.sh"))
+}
+
     os_disk {
         name              = "az104-disk1"
         caching           = "ReadWrite"
@@ -17,10 +21,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
         sku       = "18.04-LTS"
         version   = "latest"
     }
-
-  os_profile_linux_config {
-  custom_data = base64encode(file("setup.sh"))
-}
 
     computer_name  = "az104-vm1"
     admin_username = "azureuser"
