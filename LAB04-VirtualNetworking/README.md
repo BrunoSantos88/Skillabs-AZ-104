@@ -9,11 +9,11 @@ Criar Resouce Group
 Criar Networking
 - Vnet az104-04-vnet1 - CIDR 10.40.0.0/20
 -- Subnet0 10.40.0.0/24 
--- --- - az-104-04-nic0 CIDR 10.40.0.4
--- --- - --- az-104-04-pip0
+-- az-104-04-nic0 CIDR 10.40.0.4
+-- --- az-104-04-pip0
 -- Subnet1 10.40.1.0/24
--- --- - az-104-04-nic0 CIDR 10.40.1.4
--- --- - --- az-104-04-pip1
+-- az-104-04-nic0 CIDR 10.40.1.4
+-- --- az-104-04-pip1
 Criar VM
 - az-104-04-vm0
 - az-104-04-vm1
