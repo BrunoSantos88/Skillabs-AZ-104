@@ -21,7 +21,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     computer_name  = "az104-vm1"
     admin_username = "azureuser"
     disable_password_authentication = true
-    custom_data    = file("nginx.sh")
+    custom_data = "${file("nginx.sh")}"
 
 
     tags = {
