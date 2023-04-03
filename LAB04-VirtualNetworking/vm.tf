@@ -70,12 +70,11 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
 
     os_profile_linux_config {
     custom_data         = file("nginx.sh")
+    }
     
 
     tags = {
         environment = "VM1"
     }
 }
-
-
 
