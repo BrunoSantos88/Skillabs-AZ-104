@@ -5,6 +5,11 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     network_interface_ids = [azurerm_network_interface.vm00.id]
     size                  = "Standard_DS1_v2"
 
+    os_profile_linux_config {
+    custom_data         = file("nginx.sh")
+
+    }
+
     os_disk {
         name              = "az104-disk0"
         caching           = "ReadWrite"
@@ -29,10 +34,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
         private_key     = file("~/.ssh/id_rsa")
     }
      
-    os_profile_linux_config {
-    custom_data         = file("nginx.sh")
-
-    }
     tags = {
         environment = "VM0"
     }
@@ -44,6 +45,10 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     resource_group_name = azurerm_resource_group.az104-04.name
     network_interface_ids = [azurerm_network_interface.vm01.id]
     size                  = "Standard_DS1_v2"
+
+    os_profile_linux_config {
+    custom_data         = file("nginx.sh")
+    }
 
     os_disk {
         name              = "az104-disk1"
@@ -67,11 +72,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
         username       = "azureuser"
         private_key     = file("~/.ssh/id_rsa")
     }
-
-    os_profile_linux_config {
-    custom_data         = file("nginx.sh")
-    }
-    
 
     tags = {
         environment = "VM1"
