@@ -31,7 +31,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
 
     admin_ssh_key {
         username       = "azureuser"
-        private_key     = file("~/.ssh/id_rsa")
+        public_key     = file("~/.ssh/id_rsa")
     }
      
     tags = {
@@ -70,7 +70,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
 
     admin_ssh_key {
         username       = "azureuser"
-        private_key     = file("~/.ssh/id_rsa")
+        public_key     = file("~/.ssh/id_rsa")
     }
 
     tags = {
