@@ -23,16 +23,16 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     admin_password = "P@ssw0rd1234"
     disable_password_authentication = true
 
-     os_profile_linux_config {
-    custom_data         = file("nginx.sh")
 
     admin_ssh_key {
         username       = "azureuser"
         private_key     = file("~/.ssh/id_rsa")
     }
-     }
+     
+    os_profile_linux_config {
+    custom_data         = file("nginx.sh")
 
-
+    }
     tags = {
         environment = "VM0"
     }
@@ -51,8 +51,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
         storage_account_type = "Premium_LRS"
     }
 
-
-
     source_image_reference {
         publisher = "Canonical"
         offer     = "UbuntuServer"
@@ -65,15 +63,14 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     admin_password = "P@ssw0rd1234"
     disable_password_authentication = true
 
-    os_profile_linux_config {
-    custom_data         = file("nginx.sh")
-
-
     admin_ssh_key {
         username       = "azureuser"
         private_key     = file("~/.ssh/id_rsa")
     }
-    }
+
+    os_profile_linux_config {
+    custom_data         = file("nginx.sh")
+    
 
     tags = {
         environment = "VM1"
