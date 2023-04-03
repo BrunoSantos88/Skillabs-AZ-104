@@ -7,20 +7,25 @@ Criar Resouce Group
 - Resource Gorup az104-04-rg1
 
 Criar Networking
-- Vnet az104-04-vnet1 - cdr 10.40.0.0/20
+- Vnet az104-04-vnet1 - CIDR 10.40.0.0/20
 -- Subnet0 10.40.0.0/24 
--- Subnet1 10.40.1.0/20
-
+-- --- - az-104-04-nic0 CIDR 10.40.0.4
+-- --- - --- - - az-104-04-pip0
+-- Subnet1 10.40.1.0/24
+-- --- - az-104-04-nic0 CIDR 10.40.1.4
+-- --- - --- - az-104-04-pip1
 Criar VM
 - az-104-04-vm0
 - az-104-04-vm1
-- az-104-04-nic0
-- az-104-04-nic1
-- az-104-04-pip0
-- az-104-04-pip1
 
 Criar NSG
 - az-104-04-nsg01
+regra 1000
+tcp 80
+regra 1001
+tcp 22
+
+-- acesso my ip
 
 Criar DNS
 - contoso.org
