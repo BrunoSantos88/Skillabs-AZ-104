@@ -22,7 +22,7 @@ resource "azurerm_network_security_rule" "http" {
 
 
 resource "azurerm_network_security_rule" "ssh" {
-  name                        = "http-rule"
+  name                        = "ssh-rule"
   priority                    = 1001
   direction                   = "Inbound"
   access                      = "Allow"
