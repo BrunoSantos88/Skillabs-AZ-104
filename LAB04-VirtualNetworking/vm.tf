@@ -32,12 +32,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
         environment = "VM0"
     }
 
-        custom_data = <<USERDATA
-       #!/bin/bash
-apt-get install nginx -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
-       USERDATA
+       user_data  = template_file.userdata.id
 }
 
 resource "azurerm_linux_virtual_machine" "az-104-vm1" {
@@ -75,13 +70,9 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
         environment = "VM1"
     }
 
-     custom_data = <<USERDATA
-       #!/bin/bash
-apt-get install nginx -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
-       USERDATA
+      user_data  = template_file.userdata.id
 }
+
 
 
 
