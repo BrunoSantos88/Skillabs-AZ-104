@@ -1,6 +1,6 @@
 resource "azurerm_virtual_network" "example" {
   name                = "az104-04-vnet0"
-  address_space       = ["10.40.0/22"]
+  address_space       = ["10.40.0.0/20"]
   location            = azurerm_resource_group.az104-04.location
   resource_group_name = azurerm_resource_group.az104-04.name
 }
