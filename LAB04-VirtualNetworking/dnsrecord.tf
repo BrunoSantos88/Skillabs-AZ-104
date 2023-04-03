@@ -4,21 +4,14 @@ resource "azurerm_dns_zone" "contoso" {
   resource_group_name = azurerm_resource_group.az104-04.name
 }
 
-# Create an A record for the primary VM
-resource "azurerm_dns_a_record" "primary" {
-  name                = "www"
+resource "azurerm_dns_a_record" "example" {
+  name                = "vm1"
   zone_name           = azurerm_dns_zone.contoso.id
   resource_group_name = azurerm_resource_group.az104-04.name
-  records             = ["74.235.15.21"]
   ttl                 = 300
-  
-}
+  records             = [azurerm_network_interface.vm00.id]
 
-# Create an A record for the secondary VM
-resource "azurerm_dns_a_record" "secondary" {
-  name                = "www"
-  zone_name           = azurerm_dns_zone.contoso.id
-  resource_group_name = azurerm_resource_group.az104-04.name
-  records             = ["20.163.190.110"]
-  ttl                 = 300
+  depends_on = [
+    azurerm_network_interface.vm00,
+  ]
 }
