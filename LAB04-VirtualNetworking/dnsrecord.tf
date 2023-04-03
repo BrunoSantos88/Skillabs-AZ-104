@@ -3,11 +3,3 @@ resource "azurerm_dns_zone" "contoso" {
   name                = "contoso.com"
   resource_group_name = azurerm_resource_group.az104-04.name
 }
-
-resource "azurerm_dns_a_record" "primary" {
-  name                = "www"
-  resource_group_name = azurerm_resource_group.az104-04.name
-  zone_name           = azurerm_dns_zone.contoso.name
-  records             = [azurerm_public_ip.mypublicip0.id]
-  ttl                 = 300
-}
