@@ -4,14 +4,10 @@ resource "azurerm_dns_zone" "contoso" {
   resource_group_name = azurerm_resource_group.az104-04.name
 }
 
-resource "azurerm_dns_a_record" "example" {
-  name                = "vm1"
-  zone_name           = azurerm_dns_zone.contoso.id
+resource "azurerm_dns_a_record" "primary" {
+  name                = "www"
   resource_group_name = azurerm_resource_group.az104-04.name
+  zone_name           = azurerm_dns_zone.contoso.name
+  records             = [azurerm_public_ip.mypublicip0.id]
   ttl                 = 300
-  records             = [azurerm_network_interface.vm00.id]
-
-  depends_on = [
-    azurerm_network_interface.vm00,
-  ]
 }
