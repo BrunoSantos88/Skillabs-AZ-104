@@ -7,10 +7,9 @@ Criar Resouce Group
 - Resource Gorup az104-04-rg1
 
 Criar Networking
-- Vnet az104-04-vnet1 
-- cdr 10.40.0.0/20
-- Subnet0 10.40.0.0/24
-- Subnet110.40.1.0/20
+- Vnet az104-04-vnet1 - cdr 10.40.0.0/20
+-- Subnet0 10.40.0.0/24 
+-- Subnet1 10.40.1.0/20
 
 Criar VM
 - az-104-04-vm0
