@@ -6,6 +6,7 @@ resource "azurerm_dns_zone" "contoso" {
 
 resource "azurerm_dns_a_record" "primary" {
   name                = "www"
+  resource_group_name = azurerm_resource_group.az104-04.name
   zone_name           = azurerm_dns_zone.contoso.name
   records             = ["10.40.1.4"]
   ttl                 = 300
@@ -14,6 +15,7 @@ resource "azurerm_dns_a_record" "primary" {
 # Create an A record for the secondary VM
 resource "azurerm_dns_a_record" "secondary" {
   name                = "www"
+  resource_group_name = azurerm_resource_group.az104-04.name
   zone_name           = azurerm_dns_zone.contoso.name
   records             = ["10.40.0.4"]
   ttl                 = 300
