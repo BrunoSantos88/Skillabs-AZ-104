@@ -31,8 +31,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     tags = {
         environment = "VM0"
     }
-
-       user_data  = template_file.userdata.id
 }
 
 resource "azurerm_linux_virtual_machine" "az-104-vm1" {
@@ -69,8 +67,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     tags = {
         environment = "VM1"
     }
-
-      user_data  = template_file.userdata.id
 }
 
 
