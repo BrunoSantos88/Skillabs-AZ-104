@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "vm00" {
 
     ip_configuration {
     name                          = "piblicip-0"
-    subnet_id                     = azurerm_subnet.subnet0.id
+    subnet_id                     = azurerm_subnet.subnet1.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.mypublicip0.id
   }
@@ -26,7 +26,7 @@ resource "azurerm_network_interface" "vm01" {
 
    ip_configuration {
     name                          = "publicip1"
-    subnet_id                     = azurerm_subnet.subnet1.id
+    subnet_id                     = azurerm_subnet.subnet2.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.mypublicip1.id
   }
