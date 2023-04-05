@@ -7,8 +7,4 @@ resource "azurerm_public_ip" "example" {
   tags = {
     environment = "FRONTEND"
   }
-
-  sku {
-    name = "Standard"
-  }
 }
