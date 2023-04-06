@@ -16,6 +16,6 @@ resource "azurerm_public_ip" "backend" {
   allocation_method   = "Dynamic"
 
   tags = {
-    environment = "FRONTEND"
+    environment = "Backend"
   }
 }
