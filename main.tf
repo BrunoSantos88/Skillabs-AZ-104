@@ -1,9 +1,9 @@
 # SELECIONAR MODULO ANTES DE INICIAR TERRAFORM
 
-# LAB VIRTUAL NETWORK
-#module "VIRTUAL_NETWORK" {
- # source = "./VirtualNetworking"   
-#}
+ #LAB VIRTUAL NETWORK
+module "VIRTUAL_NETWORK" {
+  source = "./VirtualNetworking"   
+}
 
 #LAB PERING_CONECTION
 #module "LAB-PERING_CONECTION" {
@@ -11,6 +11,6 @@
 #}
 
 #LAB HUBSPOCK
-module "LAB-HUBSPOCK" {       
-  source = "./HubSpock"
-}
+#module "LAB-HUBSPOCK" {       
+#  source = "./HubSpock"
+#}
