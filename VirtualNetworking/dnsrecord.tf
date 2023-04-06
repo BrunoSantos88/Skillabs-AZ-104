@@ -5,7 +5,7 @@ resource "azurerm_dns_zone" "contoso" {
 }
 
 resource "azurerm_dns_a_record" "primary" {
-  name                = "www"
+  name                = "WWE"
   resource_group_name = azurerm_resource_group.az104-04.name
  zone_name           = azurerm_dns_zone.contoso.name
   records             = ["13.90.37.78"] # IP Publico alterar
