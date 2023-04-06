@@ -26,7 +26,4 @@ Incialização dos LAB sempre começa assim:
 - Por Padrao o Terraform e o GIT ja está instalado
 
 Dica: Resorce Group vc pode criar normalmente, mais conta de armazenamento sempre com letras minusculas sem traço ou espaço. </p>
-Criar cloud shell -- Modo advance - Criar recurso por recurso.
-- Resource group Terraformlab106-06
-- Conta de armazenento terraformlab10606
-- Tabela terraformlab10606
+Criar cloud shell -- pode criar defaul
