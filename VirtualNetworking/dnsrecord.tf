@@ -13,8 +13,9 @@ resource "azurerm_dns_a_record" "primary" {
 }
 
 resource "azurerm_dns_a_record" "secondary" {
+ name                = "www"
  resource_group_name = azurerm_resource_group.az104-04.name
-  zone_name           = azurerm_dns_zone.contoso.name
-  records             = [azurerm_public_ip.mypublicip0.id] #IP Publico alterar
-  ttl                 = 300
+zone_name           = azurerm_dns_zone.contoso.name
+records             = [azurerm_public_ip.mypublicip0.id] #IP Publico alterar
+ttl                 = 300
 }
