@@ -24,7 +24,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm2" {
 
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = "*"#publickey
+        public_key     = azurerm_ssh_public_key.chave_ssh.id
     }
 
 
@@ -59,7 +59,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm3" {
 
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = "*"#publickey
+        public_key     = azurerm_ssh_public_key.chave_ssh.id
 
 
     tags = {
