@@ -1,5 +1,6 @@
 resource "azurerm_ssh_public_key" "chave_ssh" {
   name = "chave_ssh"
-  path = "~/.ssh/id_rsa.pub"
-  key_data = "chave pública SSH"
+  path = "/home/bruno/.ssh/id_rsa.pub"
+  location           = azurerm_resource_group.az104-06.location
+  resource_group_name = azurerm_resource_group.az104-06.name
 }
