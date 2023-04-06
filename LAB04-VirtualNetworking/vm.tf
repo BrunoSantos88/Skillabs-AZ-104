@@ -24,12 +24,10 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
 
     admin_ssh_key {
         username       = "azureuser"
-<<<<<<< HEAD
-        public_key     = "SuaChavePublica" ##publickey
-=======
-        public_key     = "*"
->>>>>>> 866c01e276cd674d48d9648429c5d0d27038a36c
+
+        public_key     = "*" ##publickey
     }
+
 
 
     tags = {
@@ -63,11 +61,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
 
     admin_ssh_key {
         username       = "azureuser"
-<<<<<<< HEAD
         public_key     = "*"#publickey
-=======
-        public_key     = "*"
->>>>>>> 866c01e276cd674d48d9648429c5d0d27038a36c
     }
 
 

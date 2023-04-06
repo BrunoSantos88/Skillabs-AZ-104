@@ -5,7 +5,7 @@
 #}
 
 #module "LAB-PERING_CONECTION" {
-#   source = "./LAB-05"   
+#   source = "./LAB05-PeringConection"   
 #}
 
 module "LAB-HUBSPOCK" {
