@@ -31,4 +31,5 @@ Criar cloud shell -- pode criar default
 - Chave SSH vc tem criar no CLOUD SHELL BASH 
 - Commando ssh-keygen
 
-PATH chave publica passar na public key da VM no arquivo terraform 
+$ PATH chave publica passar na public key da VM no arquivo terraform "~/.ssh/id_rsa.pub"
+
