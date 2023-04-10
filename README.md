@@ -26,4 +26,10 @@ Incialização dos LAB sempre começa assim:
 - Por Padrao o Terraform e o GIT ja está instalado
 
 Dica: Resorce Group vc pode criar normalmente, mais conta de armazenamento sempre com letras minusculas sem traço ou espaço. </p>
-Criar cloud shell -- pode criar defaul
+Criar cloud shell -- pode criar default
+
+- Chave SSH vc tem criar no CLOUD SHELL BASH 
+- Commando ssh-keygen
+
+$ PATH chave publica passar na public key da VM no arquivo terraform "~/.ssh/id_rsa.pub"
+
