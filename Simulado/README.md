@@ -11,6 +11,6 @@ Simulados.
 # CloudLABS
 - Pontuação:
 
-# Algunas que tenho duvida.
+# Perguntas que tenho duvida.
 
 # Pergunta 1
