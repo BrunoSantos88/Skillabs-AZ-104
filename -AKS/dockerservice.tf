@@ -6,7 +6,7 @@ resource "azurerm_container_group" "jenkinscontainer" {
   os_type             = "Linux"
 
    container {
-    name   = "jenkins"
+    name   = "jenkins-sever"
     image  = "brunosantos88/jenkinslinux:v1"
     cpu    = "2"
     memory = "4"
@@ -18,7 +18,7 @@ resource "azurerm_container_group" "jenkinscontainer" {
   }
 
   container {
-    name   = "jenkins"
+    name   = "jenkins-agent"
     image  = "jenkins/agent"
     cpu    = "0.5"
     memory = "2.0"
