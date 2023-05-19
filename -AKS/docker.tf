@@ -15,5 +15,10 @@ resource "azurerm_container_group" "container" {
       port     = 8080
       protocol = "TCP"
     }
+
+    ports {
+      port     = 5000
+      protocol = "TCP"
+    }
   }
 }
