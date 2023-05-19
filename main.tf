@@ -17,6 +17,6 @@
 #}
 
 # LAB AKS
-module "LAB-HUBSPOCK" {       
-  source = "./aks"
+module "AKS-CLUSTER" {       
+  source = "./AKS"
 }
