@@ -1,5 +1,5 @@
 resource "azurerm_container_registry" "acr" {
-  name                = "aplication"
+  name                = "developer"
   resource_group_name = var.resoucegroup
   location            = var.location
   sku                 = "Premium"
