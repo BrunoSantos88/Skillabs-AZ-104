@@ -9,7 +9,7 @@ resource "azurerm_container_group" "container" {
     name   = "jenkinserver"
     image  = "jenkins/jenkins"
     cpu    = "2"
-    memory = "2048"
+    memory = "4"
 
     ports {
       port     = 8080
