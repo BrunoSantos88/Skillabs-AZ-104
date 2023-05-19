@@ -18,5 +18,5 @@
 
 # LAB AKS
 module "AKS-CLUSTER" {       
-  source = "./AKS"
+  source = "./-AKS"
 }
