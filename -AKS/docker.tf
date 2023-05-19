@@ -7,7 +7,7 @@ resource "azurerm_container_group" "container" {
 
   container {
     name   = "jenkinserver"
-    image  = "brunosantos88/jenkinslinux"
+    image  = "brunosantos88/jenkinslinux:v1"
     cpu    = "2"
     memory = "8"
 
