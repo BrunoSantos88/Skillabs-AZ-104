@@ -1,19 +1,21 @@
 pipeline {
-    agent none 
-    stages {
-        stage('Example Build') {
-            agent { docker 'maven:3.9.0-eclipse-temurin-11' } 
-            steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
-            }
+	agent none
+  stages {
+  	stage('Maven Install') {
+    	agent {
+      	docker {
+        	image 'maven:3.5.0'
         }
-        stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
-            steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
-            }
-        }
+      }
+      steps {
+      	sh 'mvn clean install'
+      }
     }
+    stage('Docker Build') {
+    	agent any
+      steps {
+      	sh 'docker build -t shanem/spring-petclinic:latest .'
+      }
+    }
+  }
 }
