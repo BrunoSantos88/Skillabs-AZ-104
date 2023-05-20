@@ -1,7 +1,0 @@
-FROM nginx
-COPY ./site/index.html /usr/share/nginx/html/
-EXPOSE 80
-ENV API_URL=http://localhost:80/api/
-WORKDIR /usr/share/nginx/html/
-ENTRYPOINT ["/usr/sbin/nginx"]
-CMD ["-g", "daemon off;"]
