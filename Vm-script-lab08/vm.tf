@@ -24,7 +24,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
 
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = "~/.ssh/id_rsa.pub"
     }
 
 
@@ -59,7 +58,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
 
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = "~/.ssh/id_rsa.pub"
     }
 
 
