@@ -19,7 +19,7 @@ resource "azurerm_availability_set" "DemoAset" {
 ## <https://www.terraform.io/docs/providers/azurerm/r/virtual_network.html>
 resource "azurerm_virtual_network" "vnet" {
   name                = "vNet"
-  address_space       = ["10.40.0.0/22"]
+   address_space       = ["10.40.0.0/22"]
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
@@ -29,7 +29,7 @@ resource "azurerm_subnet" "subnet" {
   name                 = "internal"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefix       = "10.40.2.0/24"
+   address_prefixes     = ["10.40.0.0/24"]
 }
 
 ## <https://www.terraform.io/docs/providers/azurerm/r/network_interface.html>
