@@ -13,11 +13,11 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     }
 
     source_image_reference {
-        publisher = "Canonical"
-        offer     = "UbuntuServer"
-        sku       = "18.04-LTS"
-        version   = "latest"
-    }
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2019-Datacenter"
+    version   = "latest"
+  }
 
     computer_name  = "az104-vm0"
     admin_username = "azureuser"
@@ -48,11 +48,11 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     }
 
     source_image_reference {
-        publisher = "Canonical"
-        offer     = "UbuntuServer"
-        sku       = "18.04-LTS"
-        version   = "latest"
-    }
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2019-Datacenter"
+    version   = "latest"
+  }
 
     computer_name  = "az104-vm1"
     admin_username = "azureuser"
