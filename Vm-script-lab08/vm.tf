@@ -7,10 +7,9 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     size                  = "Standard_DS1_v2"
 
     os_disk {
-        name              = "az104-disk0"
-        caching           = "ReadWrite"
-        storage_account_type = "Premium_LRS"
-    }
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
 
     source_image_reference {
     publisher = "MicrosoftWindowsServer"
@@ -42,10 +41,9 @@ resource "azurerm_linux_virtual_machine" "az-104-vm1" {
     size                  = "Standard_DS1_v2"
 
     os_disk {
-        name              = "az104-disk1"
-        caching           = "ReadWrite"
-        storage_account_type = "Premium_LRS"
-    }
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
 
     source_image_reference {
     publisher = "MicrosoftWindowsServer"
