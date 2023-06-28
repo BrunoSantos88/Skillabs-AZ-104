@@ -1,4 +1,8 @@
 # Skillabs-AZ-104-Terraform
+
+</p>
+<img src="https://user-images.githubusercontent.com/91704169/249544860-225df001-32fe-4cef-976b-bca5e9751f65.png" min-width=1000px" max-width="100px" width="1000px" align="centter" alt="Lab07">
+
 Laboratorios Skillabs AZ-104 -- Guia para uso do Terraform para criar metodologia rapida para agilizar criação dos LABS
 
 Exercício 1
