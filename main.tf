@@ -17,6 +17,12 @@
 #}
 
 # LAB AKS
-module "AKS-CLUSTER" {       
-  source = "./-AKS"
+#module "AKS-CLUSTER" {       
+ # source = "./AksCluster"
+#}
+
+#LAB 08
+module "lab08" {       
+ # source = "./Vm-script-lab08"
 }
+
