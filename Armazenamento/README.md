@@ -20,3 +20,6 @@ Observação : se esta for a primeira vez que você inicia o Cloud Shell e a men
 Na barra de ferramentas do painel Cloud Shell, clique no ícone Carregar/Baixar arquivos , no menu suspenso, clique em Carregar e carregue os arquivos az104-07-vm-template.json e az104-07-vm-parameters.json no diretório inicial do Cloud Shell.
 
 No painel Cloud Shell, execute o seguinte para criar o grupo de recursos que hospedará a máquina virtual (substitua o espaço reservado '[Azure_region]' pelo nome de uma região do Azure onde você pretende implantar a máquina virtual do Azure)
+
+
+# Dificil - tentar novamente.
