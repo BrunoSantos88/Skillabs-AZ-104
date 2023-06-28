@@ -23,6 +23,6 @@
 
 #LAB 08
 module "lab08" {       
- # source = "./Vm-script-lab08"
+  source = "./Vm-script-lab08"
 }
 
