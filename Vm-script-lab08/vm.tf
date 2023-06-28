@@ -35,7 +35,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
 
 #vm1
 resource "azurerm_linux_virtual_machine" "az-104-vm1" {
-    name                  = "az104-vm0"
+    name                  = "az104-vm1"
     location           = azurerm_resource_group.az104-08.location
     resource_group_name = azurerm_resource_group.az104-08.name
     network_interface_ids = [azurerm_network_interface.vm01.id]
