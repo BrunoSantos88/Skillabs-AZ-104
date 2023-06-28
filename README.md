@@ -8,4 +8,4 @@ Configurar e gerenciar redes virtuais (20-25%)  </P>
 Monitorar e manter os recursos do Azure (10 a 15%)  </P>
 
 - GitHub
-- Sskilabs
+- Skillabs
