@@ -8,7 +8,20 @@ Configurar e gerenciar redes virtuais (20-25%)  </P>
 Monitorar e manter os recursos do Azure (10 a 15%)  </P>
 
 - GitHub
-- Skillabs
+- Link: https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator/tree/master/Instructions/Labs
+  
+- Skillabs az-104
 
-- `Provas Marcadas para 28/07 e 11/08
+- Criar conta de estudante;
+Link: https://azure.microsoft.com/pt-br/free/students/
+
+
+  Treinamentos Canal da Cloud
+  Links
+  
+  Revisão AZ-104 | EP1 | O que você precisa saber para obter o seu PASS? com Victória Vasconcelos
+  Link: https://www.youtube.com/watch?v=UjhODc4lZn4
+  Revisão AZ-104 | EP2 | O que você precisa saber para obter o seu PASS?
+  Link:https://www.youtube.com/watch?v=dkTHzEYK3Oo
+
   
