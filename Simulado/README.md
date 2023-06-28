@@ -12,4 +12,4 @@ Simulados.
 - ExamePoster </P>
 - Link https://examposter.com/microsoft/az-104-microsoft-azure-administrator/az-104-part-01/ </P>
 
-  # Questoers com Duvidas
+  # Questões com Duvidas
