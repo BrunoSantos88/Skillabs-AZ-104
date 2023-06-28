@@ -4,8 +4,6 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     location           = azurerm_resource_group.az104-08.location
     resource_group_name = azurerm_resource_group.az104-08.name
     size                = "Standard_F2"
-    admin_username      = "adminuser"
-    admin_password      = "P@$$w0rd1234!"
     availability_set_id = azurerm_availability_set.DemoAset.id
     network_interface_ids = [
     azurerm_network_interface.vm00.id,
@@ -22,4 +20,7 @@ resource "azurerm_linux_virtual_machine" "az-104-vm0" {
     sku       = "2016-Datacenter"
     version   = "latest"
   }
+
+  computer_name  = "az104-vm0"
+  disable_password_authentication = true
 }
