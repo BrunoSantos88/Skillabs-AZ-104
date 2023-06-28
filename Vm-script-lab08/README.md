@@ -5,17 +5,14 @@
 
 Laboratorios Skillabs AZ-104 -- Guia para uso do Terraform para criar metodologia rapida para agilizar criação dos LABS
 
-Exercício 1
-Tarefa 1: provisionar o ambiente de laboratório
-Nesta tarefa, você implantará uma máquina virtual do Azure que usará posteriormente neste laboratório.
 
-Neste laboratório, você irá:
+Neste laboratório, você irá: </P>
 
-Tarefa 1: implantar máquinas virtuais do Azure com resiliência de zona usando o portal do Azure e um modelo do Azure Resource Manager
-Tarefa 2: Configurar máquinas virtuais do Azure usando extensões de máquina virtual
-Tarefa 3: dimensionar computação e armazenamento para máquinas virtuais do Azure
-Tarefa 4: registrar os provedores de recursos Microsoft.Insights e Microsoft.AlertsManagement
-Tarefa 5: implantar conjuntos de dimensionamento de máquinas virtuais do Azure resilientes à zona usando o portal do Azure
-Tarefa 6: Configurar conjuntos de dimensionamento de máquinas virtuais do Azure usando extensões de máquinas virtuais
-Tarefa 7: dimensionar computação e armazenamento para conjuntos de dimensionamento de máquinas virtuais do Azure (opcional)
+- Tarefa 1: implantar máquinas virtuais do Azure com resiliência de zona usando o portal do Azure e um modelo do Azure Resource Manager </P>
+- Tarefa 2: Configurar máquinas virtuais do Azure usando extensões de máquina virtual </P>
+- Tarefa 3: dimensionar computação e armazenamento para máquinas virtuais do Azure </P>
+- Tarefa 4: registrar os provedores de recursos Microsoft.Insights e Microsoft.AlertsManagement </P>
+- Tarefa 5: implantar conjuntos de dimensionamento de máquinas virtuais do Azure resilientes à zona usando o portal do Azure </P>
+- Tarefa 6: Configurar conjuntos de dimensionamento de máquinas virtuais do Azure usando extensões de máquinas virtuais </P>
+- Tarefa 7: dimensionar computação e armazenamento para conjuntos de dimensionamento de máquinas virtuais do Azure (opcional) </P>
 
