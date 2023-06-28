@@ -9,3 +9,6 @@ Monitorar e manter os recursos do Azure (10 a 15%)  </P>
 
 - GitHub
 - Skillabs
+
+- `Provas Marcadas para 28/07 e 11/08
+  
