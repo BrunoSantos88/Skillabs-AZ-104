@@ -1,7 +1,7 @@
 provider "azurerm" {
-  version = "=2.5.0"
   features {}
 }
+
 
 ## <https://www.terraform.io/docs/providers/azurerm/r/resource_group.html>
 resource "azurerm_resource_group" "rg" {
