@@ -5,11 +5,10 @@ resource "azurerm_virtual_network" "vnet1" {
   resource_group_name = azurerm_resource_group.az104-08.name
 }
 
-
 resource "azurerm_subnet" "subnet0" {
   name                 = "subnet0"
-  location           = azurerm_resource_group.az104-08.location
   resource_group_name = azurerm_resource_group.az104-08.name
+  virtual_network_name = azurerm_virtual_network.vnet1.name
   address_prefixes     = ["10.80.0.0/24"]
 }
 
