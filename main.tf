@@ -22,7 +22,13 @@
 #}
 
 #LAB 08
-module "lab08" {       
-  source = "./Vm-script-lab08"
+//module "lab08" {       
+//  source = "./Vm-script-lab08"
+//}
+
+
+##LAB Cloud Pering
+module "CloudPering" {       
+source = "./CloudPering"
 }
 
