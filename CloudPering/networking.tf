@@ -1,3 +1,19 @@
+resource "azurerm_virtual_network" "vnet0" {
+  name                = "az104-05-vnet00"
+  address_space       = ["10.50.0.0/22"]
+  location            = azurerm_resource_group.az104-05.location
+  resource_group_name = azurerm_resource_group.az104-05.name
+
+}
+
+resource "azurerm_virtual_network" "vnet1" {
+  name                = "az104-05-vnet00"
+  address_space       = ["10.51.0.0/22"]
+  location            = azurerm_resource_group.az104-05.location
+  resource_group_name = azurerm_resource_group.az104-05.name
+
+}
+
 resource "azurerm_virtual_network" "vnet2" {
   name                = "az104-05-vnet00"
   address_space       = ["10.52.0.0/22"]
@@ -59,7 +75,7 @@ resource "azurerm_network_interface" "vm01" {
     name                          = "vm1nic"
     subnet_id                     = azurerm_subnet.subnet1.id
     private_ip_address_allocation = "Static"
-    private_ip_address            = "10.51..4"
+    private_ip_address            = "10.52.0.4"
     }
 
     tags = {
@@ -67,15 +83,16 @@ resource "azurerm_network_interface" "vm01" {
     }
 }
 
-resource "azurerm_network_interface" "vm00" {
+
+resource "azurerm_network_interface" "vm02" {
   name                = "vm0nic"
- location            = azurerm_resource_group.az104-05.location
+   location            = azurerm_resource_group.az104-05.location
  resource_group_name = azurerm_resource_group.az104-05.name
   enable_ip_forwarding = true
 
     ip_configuration {
     name                          = "piblicip-0"
-    subnet_id                     = azurerm_subnet.subnet1.id
+    subnet_id                     = azurerm_subnet.subnet2.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.mypublicip0.id
   }
