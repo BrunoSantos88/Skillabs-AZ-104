@@ -10,5 +10,6 @@ resource "azurerm_resource_group" "az104-05" {
 
 resource "azurerm_resource_group" "bastion" {
   name     = "bastion"
+  bastion  = "bastion"
   location = "East US"
 }
