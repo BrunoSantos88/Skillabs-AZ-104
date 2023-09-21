@@ -1,19 +1,3 @@
-resource "azurerm_virtual_network" "vnet0" {
-  name                = "az104-05-vnet00"
-  address_space       = ["10.50.0.0/22"]
-  location            = azurerm_resource_group.az104-05.location
-  resource_group_name = azurerm_resource_group.az104-05.name
-
-}
-
-resource "azurerm_virtual_network" "vnet1" {
-  name                = "az104-05-vnet00"
-  address_space       = ["10.51.0.0/22"]
-  location            = azurerm_resource_group.az104-05.location
-  resource_group_name = azurerm_resource_group.az104-05.name
-
-}
-
 resource "azurerm_virtual_network" "vnet2" {
   name                = "az104-05-vnet00"
   address_space       = ["10.52.0.0/22"]
@@ -75,7 +59,7 @@ resource "azurerm_network_interface" "vm01" {
     name                          = "vm1nic"
     subnet_id                     = azurerm_subnet.subnet1.id
     private_ip_address_allocation = "Static"
-    private_ip_address            = "10.50.1.4"
+    private_ip_address            = "10.51..4"
     }
 
     tags = {
