@@ -27,7 +27,7 @@ resource "azurerm_network_interface" "vm01" {
     name                          = "vm1nic"
     subnet_id                     = azurerm_subnet.subnet1.id
     private_ip_address_allocation = "Static"
-    private_ip_address            = "10.51.0.4"
+    private_ip_address            = "10.50.1.4"
     }
 
     tags = {
