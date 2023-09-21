@@ -5,8 +5,8 @@ resource "azurerm_virtual_network" "example" {
   resource_group_name = azurerm_resource_group.bastion.id
 }
 
-resource "azurerm_subnet" "subnet1" {
-  name                 = "subnet0"
+resource "azurerm_subnet" "subnet-bastion" {
+  name                 = "subnet0-bst"
    resource_group_name = azurerm_resource_group.bastion.id
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.40.0.0/24"]
@@ -21,7 +21,7 @@ resource "azurerm_network_interface" "bastion" {
 
     ip_configuration {
     name                          = "piblicip-0"
-    subnet_id                     = azurerm_subnet.subnet1.id
+    subnet_id                     = azurerm_subnet.subnet-bastion.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.mypublicip0.id
   }

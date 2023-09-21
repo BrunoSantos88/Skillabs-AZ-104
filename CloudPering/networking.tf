@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "vnet0" {
 
 
 resource "azurerm_subnet" "subnet0" {
-  name                 = "subnet-0"
+  name                 = "subnet-00"
   resource_group_name = azurerm_resource_group.az104-05.name
   virtual_network_name = azurerm_virtual_network.vnet0.name
   address_prefixes     = ["10.50.0.0/24"]
@@ -15,7 +15,7 @@ resource "azurerm_subnet" "subnet0" {
 
 
 resource "azurerm_subnet" "subnet1" {
-  name                 = "subnet-1"
+  name                 = "subnet-01"
   resource_group_name = azurerm_resource_group.az104-05.name
   virtual_network_name = azurerm_virtual_network.vnet0.name
   address_prefixes     = ["10.50.1.0/24"]
