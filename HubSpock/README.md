@@ -14,7 +14,6 @@
 # Hub:
 
 - Rede Virtual (VNet): Crie uma VNet para o hub que contenha recursos compartilhados.
-  
 
 - Gateway VPN ou ExpressRoute: Configure uma solução de conectividade segura entre o hub e outras redes (por exemplo, data centers locais).
 
@@ -26,7 +25,7 @@
 
 - Peering: Estabeleça peering entre as VNets e o hub para permitir a comunicação.
 
-*- Nível de Aplicação de Segurança: Use grupos de segurança de rede (NSGs) para controlar o tráfego entre as VNets.
+- Nível de Aplicação de Segurança: Use grupos de segurança de rede (NSGs) para controlar o tráfego entre as VNets.
 
 # Azure Resource Manager (ARM) Templates:
 
