@@ -3,21 +3,58 @@
 </p>
 <img src="https://user-images.githubusercontent.com/91704169/228569707-90c173a8-659f-4800-b4b7-59a2cce04dc1.png" min-width=1000px" max-width="100px" width="1000px" align="centter" alt="Lab06">
 
-Criar Resouce Group
-- Resource Gorup az104-04-rg1
-- Resource Gorup az104-04-rg4
-- Resource Gorup az104-04-rg5
+# Hub-Spoke Architecture no Azure:
 
-CRIAR VNET
-- Az104-04-rg1   10.60.0.0/22
-- Subnet-00      10.60.0.0/24
-- Subnet-01      10.60.1.0/24
-- Az104-04-rg2   10.62.0.0/22
-- subnet0        10.62.0.0/24
-- az104-04-rg3   10.63.0.0/22
-- Subnet0        10.63.0.0/24
+- Hub: O hub é o ponto central que geralmente contém recursos compartilhados, como serviços de rede, segurança e conectividade. Ele atua como o ponto de controle central.
 
-Criar VMS
+- Spokes: Os spokes são redes isoladas que se conectam ao hub. Cada spoke pode representar um ambiente, como desenvolvimento, teste ou produção.
+
+- Aqui está uma arquitetura básica usando Azure:
+
+# Hub:
+
+- Rede Virtual (VNet): Crie uma VNet para o hub que contenha recursos compartilhados.
+  
+
+- Gateway VPN ou ExpressRoute: Configure uma solução de conectividade segura entre o hub e outras redes (por exemplo, data centers locais).
+
+- Azure Bastion: Para acessar máquinas virtuais sem expor as portas públicas.
+
+# Spokes:
+
+- VNets: Crie VNets separadas para cada ambiente (desenvolvimento, teste, produção, etc.).
+
+- Peering: Estabeleça peering entre as VNets e o hub para permitir a comunicação.
+
+*- Nível de Aplicação de Segurança: Use grupos de segurança de rede (NSGs) para controlar o tráfego entre as VNets.
+
+# Azure Resource Manager (ARM) Templates:
+
+- Template de Implantação: Considere o uso de ARM templates para implantar consistentemente a arquitetura.
+Gerenciamento de Identidade e Acesso:
+
+- Azure Active Directory (AAD): Configure a autenticação e autorização usando o AAD.
+
+- Controle de Acesso Baseado em Função (RBAC): Atribua funções específicas a usuários ou serviços para controlar o acesso.
+
+# Monitoramento e Log:
+
+- Azure Monitor: Para monitorar o desempenho e a integridade dos recursos.
+
+- Azure Log Analytics: Armazene e analise logs para insights e troubleshooting.
+
+# Governança e Conformidade:
+
+- Políticas Azure Policy: Implemente políticas para garantir que os recursos estejam em conformidade com padrões definidos.
+
+- Tags: Use tags para organizar e categorizar recursos.
+
+# Atualizações e Manutenção:
+
+- Azure Automation: Automatize tarefas de manutenção e atualizações.
+- Backup e Recuperação:
+
+- Azure Backup: Configure backups para garantir a recuperação de dados críticos.
 
 
 
